@@ -1,0 +1,9 @@
+# rust
+/target/
+
+# direnv
+/.direnv/
+
+# code coverage
+/codecov.json
+/lcov.info
