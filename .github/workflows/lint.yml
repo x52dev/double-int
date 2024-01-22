@@ -69,20 +69,23 @@ jobs:
   public-api-diff:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout main branch
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.base_ref }}
 
-      - uses: actions/checkout@v4
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
 
-      - uses: actions-rust-lang/setup-rust-toolchain@v1.8.0
+      - name: Install Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1.8.0
         with:
           toolchain: nightly-2023-08-25
 
-      - uses: taiki-e/cache-cargo-install-action@v1.3.0
+      - name: Install cargo-public-api
+        uses: taiki-e/install-action@v2.24.1
         with:
           tool: cargo-public-api
 
       - name: Generate API diff
-        run: |
-          cargo public-api --manifest-path diff ${{ github.event.pull_request.base.sha }}..${{ github.sha }}
+        run: cargo public-api diff ${{ github.event.pull_request.base.sha }}..${{ github.sha }}
