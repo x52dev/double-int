@@ -28,7 +28,7 @@ jobs:
           components: clippy
 
       - name: Install cargo-hack
-        uses: taiki-e/install-action@v2.44.44
+        uses: taiki-e/install-action@v2.44.54
         with:
           tool: cargo-hack
 
@@ -83,7 +83,7 @@ jobs:
           toolchain: nightly-2024-09-10
 
       - name: Install cargo-public-api
-        uses: taiki-e/install-action@v2.44.44
+        uses: taiki-e/install-action@v2.44.54
         with:
           tool: cargo-public-api
 
