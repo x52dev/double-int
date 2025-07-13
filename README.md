@@ -1,3 +1,7 @@
+## Source Code Merged Into <https://github.com/x52dev/serde-utils>
+
+---
+
 # `double-int`
 
 <!-- prettier-ignore-start -->
